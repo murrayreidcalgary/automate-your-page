@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<!-- This line is a test of an HTML comment. -->
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Murray's Introduction to Programming Project</title>
+  <link rel="stylesheet" type="text/css" href="stage-2-exercise-1.css">
+</head>
+
+<body>
+
+<!-- Introduction -->
+<div id="top">
+  <h1>INTRODUCTION</h1>
+  <p>
+  This web page contains the notes taken by Murray Reid as he went through the UDACITY nano-degree <em>Introduction to Programming</em>.
+  It is divided into a number of sections corresponding to the various <b>STAGES</b> of the course material.
+  </p>
+  <div class="centered">
+    <b>TABLE OF CONTENTS</b>
+    <br><br>
+    <a href="#stage0">Web Basics</a>
+    <br>
+    <a href="#stage1">Structure</a>
+    <br>
+    <a href="#stage2">Automate Your Page</a>
+    <br><br>
+    <hr>
+    </div>
+</div>
+
+
+<!-- Stage 0 Notes -->
+<div class="chapter" id="stage0">
+<h1>STAGE 0: WEB BASICS</h1>
+
+<h2>0.1. How the Web Works</h2>
+<ol>
+  <li>Person (using...)</li>
+  <li>PC/laptop with browser (talking HTTP to...)</li>
+  <li>Internet (talking HTTP to...)</li>
+  <li>Servers</li>
+</ol>
+
+<h2>0.2. HTML Elements</h2>
+<p> An element usually consists of:</p>
+  <div class="note">
+    <code>&lt;tag&gt; content &lt;/tag&gt;</code>
+  </div>
+<p>In some cases an element may be a "void tag", where there is no content, nor a closing tag. EG the BReak tag</p>
+<p>Elements may be in-line or block oriented.</p>
+<p>Tags consist of a mnemonic surrounded by a leading "less than" symbol
+ and followed by a "greater than" symbol. The closing tag has a "forward
+ slash" symbol preceding the mnemonic. Some opening tags have Attributes
+ that modify their behaviour - these appear after the mnemonic and 
+before the closing "greater than" symbol.</p>
+<p>In the following list, the mnemonic of the tag is given, followed 
+by an indication of whether it is in-line or block oriented in 
+parentheses. This is followed with a short description of what the tag 
+does. Where Attribute(s) are known they are listed on succeeding lines.</p>
+<div class="html-tags">
+<ul>
+  <li><b>b</b> (i) Bold</li>
+   <li><b>em</b> (i) EMphasis, italics</li>
+   <li><b>a</b> (i) Anchor; link to other stuff
+    <ul>
+      <li>href="url" where to go to</li>
+    </ul>
+   </li><li><b>img</b> (i) IMaGe; include a picture here
+    <ul>
+      <li>src="ref" where to find the picture</li>
+      <li>alt="text" description of the picture</li>
+    </ul>
+   </li><li><b>br</b> (i) BReak; start a new line; [VOID Tag]</li>
+   <li><b>p</b> (b) Paragraph</li>
+   <li><b>div</b> (b) create a block of stuff, a DIVision</li>
+   <li><b>span</b> (i) create a block of stuff that SPANs from here to the closing tag</li>
+   <li><b>strong</b> (i) provide STRONG emphasis to text</li>
+   <li><b>form</b> (b) create a FORM</li>
+   <li><b>head</b> (b) create a HEADing for the document</li>
+   <li><b>body</b> (b) create the BODY of the document</li>
+   <li><b>html</b> (b) the definition of the entire HTML document</li>
+  <li><b>h1</b>...<b>h6</b> (i) Heading levels 1...6</li>
+  <li><b>ol</b> (i?) Ordered List</li>
+  <li><b>ul</b> (i?) Unordered List</li>
+  <li><b>li</b> (i) LIst element</li>
+  <li><b>link</b>(i) LINK to style file or other content, but only within the HEAD tag</li>
+  <li><b>style</b>(i) STYLE definitions (I.E. CSS code), but only within the HEAD tag</li>
+  <li><b>blockquote</b> (b) create a BLOCK of QUOTation tExt
+  <br>
+  <b>NOTE:</b> This tag seems to have the implicit function of terminating a Paragraph block, resulting in a hanging end of Paragraph tag.
+  </li>
+</ul>
+</div>
+
+<a href="#top">Return to Top</a>
+<hr>
+</div>
+
+
+<!-- Stage 1 Notes -->
+<div id="stage1" class="chapter">
+<h1>STAGE 1: HTML STRUCTURE</h1>
+
+<h2>1.1. NOTES</h2>
+<p>A page is organized as a set of boxes.
+Boxes have content.
+Elements (particularly block oriented ones) can be treated as boxes.
+Boxes have locations, sizes, colours, borders and other characteristics.
+Boxes are placed on a grid.</p>
+<p>Style is applied to boxes to change their sizes, colours and so forth.
+Style can be applied via stuff in the HEAD section - for simple projects.
+Style can instead/usually be applied by means of an external file (type CSS) via a LINK in the HEAD section.</p>
+<div class="note">
+<b>NOTES:</b>
+<br>&nbsp;&nbsp;DO NOT use a fully specified disk reference as Netscape 
+fails to interpret it correctly; place the CSS file in the same 
+directory as the HTML file.
+<br>&nbsp;&nbsp;DO NOT use spaces in file references.
+</div>
+<p>Boxes can have boxes inside them.
+This nesting is reflected by indentation of the code.</p>
+<p>Use a language-specific editor to facilitate syntactically correct writing of HTML (and CSS) code.</p>
+<p>Boxes have 4 sizing characteristics (from inside layer to outside): content, padding, border, margin.</p>
+<p>The CSS attribute Box-sizing: border-box saves having to compute the 
+sum of the various parts and lets you specify just one size for the 
+inner three layers. Specify sizes in pixels (PX) or percent.</p>
+<p>Div takes the full width of a page. The attribute (in CSS) Display:Flex allows the blocks to be positioned beside each other.</p>
+</div>
+<!-- end of the course notes pertaining to Stage 1 -->
+
+
+<div class="to-reviewer">
+<h2>1.2. NOTES on OBVIOUS STUFF</h2>
+<ol>
+<li>I do not make notes of stuff that (I think) I already know.
+</li>
+<li>
+Attempting to 'test' or 'review' based on your opinion of what constitutes adequate notes is making an assumption as to what the student doesn't know.
+I was certain ahead of time that you would fail my first submission by making this assumption.
+I submitted it in the hopes I was wrong.
+If you look at my biography I think you will find there is a reason I know a bunch of the concepts you are looking for.
+Some of the following notes will also emphasize this point.
+</li>
+<li>
+HTML code should be organized in a structured manner.
+</li>
+<li>
+It should be noted that HTML is a programming language that has VERY 
+LITTLE inherent structure. Programming languages like APL and SNOBALL 
+(and even COBOL) have much more inherent structure. PERL also has more 
+inherent structure.
+</li>
+<li>
+CSS code should be used to minimize the need to repeat some types of coding.
+</li>
+<li>
+Note that, largely, CSS provides the means for affecting similar types/groups of HTML elements, in a common way.
+To that end it should have code that gets applied more than once to the HTML code.
+</li>
+<li>
+CSS also provides a somewhat more 'modern' style for specifying display-specific attributes.
+Thus putting the bulk of style instructions into CSS seems reasonable even if not repeated in its application to the HTML.
+</li>
+<li>
+Note that any programming language that allows functions and subroutines provides more and better structuring tools than does HTML.
+The bracketed components of CSS, at best, might be considered similar to function calls in other programming languages.
+</li>
+<li>
+The use of tags HTML, HEAD and BODY are in a sense the only real 'structure' provided by HTML.
+I did not mention these things in my notes as I had already documented them in lesson zero, as well as used them.
+</li>
+<li>
+DIV tags are a kind of structural element in HTML.
+In this project, they are used to group bocks of elements in a somewhat arbitrary manner.
+So far I have not seen a compelling need in this project for this construct.
+(The exception is this particular DIV - I suspect I will have a need to push back to the reviewers in future as well.)
+</li>
+<li>
+I think use of LINK to connect files of HTML content is a much better structural technique.
+For example it would allow for the writing of an 
+INDEX HTML document that shows the project as a set of lessons, each lesson in its own file.
+That would provides some clear structure to this project.
+</li>
+<li>
+Indentation and comments are a means of making code more legible/understandable to the human reader.
+These techniques have been around in programming since the advent of assembler code.
+I.E. since before your generation was even gestated. (Mine too, and I am nearing retirement.)
+</li>
+<li>
+Semantic tags are those that offer some implicit meaning and organization by their use.
+Things like H1, H2, etc and OL and UL.
+These are directly analogous to equivalent elements in text processing systems like phototypesetting, and word processing.
+Hence not really a new idea to me (or most students I suspect.)
+</li>
+<li>
+I did not mention "code, test, refine" as that is a basic, oft-repeated aspect of programming.
+I see it has not gone away - the tools still don't catch very much of the little errors that programmers make (and in my case, where I really don't like tools that try to do things for you, add errors).
+</li>
+<li>
+I would merely add that the 'agile' style of program/app development is merely a formalization of the above mantra, such that a complete app is not attempted all at once, but broken down into smaller parts that get 
+built at each cycle.
+Which gets us into the topic of 'design', a whole 
+different skill.
+</li>
+<li>
+As a side note, I would point out that the course material did a very poor job of actually articulating that there was a 'design' that the instruction material was leading us to build.
+It would have been really nice if the course materials had provided something like a JPG file that showed what we were to be building, so that we could see how we were progressing toward that goal.
+Quizzes that asked how close we were coming to that goal are a bit silly when you cannot see the goal!
+[How's that for a learning from the course so far?]
+</li>
+<li>
+It was a nice learning for me to learn that there are tools out there that can inspect your code to see if it meets standards.
+It was a little depressing to find out that what we had been taught was inadequate for passing such reviews.
+It was further depressing to know we were using stuff for HTML5, which is a standard that has not been ratified as yet, and that this was in fact the standard our code is being held to.
+</li>
+<li>
+BTW: is there a spell-checking app that can look at the code (text portion only) I write? A grammar checker for the text?
+</li>
+<li>
+Along the same lines it is depressing to know that the subject of incompatibilities between different browsers (and their versions/releases!) has not been addressed. That aspect has already cropped up in the implementation of this course - some stuff only shows correctly in IE, some shows well in IE and Netscape, while the feedback 
+on our submissions only shows at all in Netscape.
+</li>
+<li>
+Yes I have resubmitted this file to the code checker site again.
+</li>
+<li>
+I hope that this long discourse will help to disabuse you of the idea that just because I did not make note of a matter does not mean I don't understand/know of the concept in question.
+</li>
+</ol>
+<p>
+Have a good day!
+</p>
+<br>
+</div>
+<!-- end of the (first) set of review feedback notes -->
+
+<div class="to-reviewer">
+<h2>1.3. MORE NOTES on OBVIOUS STUFF</h2>
+<ol>
+<li>
+I believe I already pointed out, in items V and VI above, the usefulness of using CSS to avoid repeated coding of the same stuff.
+</li>
+<li>
+That said, I believe my use of CSS to affect the style of bullet numbering throughout, the use of the 'chapter' divs, and the 'to-reviewer' divs, H1 characteristics, and so forth, all DEMONSTRATE 
+that I understand the idea of reducing the coding effort.
+(Even though I personally do not like the options that I selected - I prefer the default styles in most cases - I made use of the capabilities to illustrate that I do indeed understand the power associated with this 
+technique!)
+</li>
+<li>
+An examination of my HTML code will, I think, show very little repetition, aside from the syntactic aspects of defining tags.
+</li>
+<li>
+An examination of my CSS code will show that the things defined there affect multiple occurrences of tags and classes, indicating an understanding of the reduced coding effort achieved by such techniques.
+</li>
+<li>
+That being covered, let me be explicit and state that not repeating coding offers the following benefits:
+<!-- start of nested list; the depreciated method is where it starts after the closing tag of an element -->
+  <ul>
+  <li>saves typing</li>
+  <li>saves time</li>
+  <li>avoids introduction of mistakes in the repetitions</li>
+  <li>makes it easy to make changes to all occurrences (of a tag or class) with a single change in a single location</li>
+  <li>offers the opportunity to provide consistency in presentation style</li>
+  </ul>
+</li>
+<!-- end of the nested list (inside a list element) -->
+</ol>
+<p>
+I hope that this shows that I indeed understand the benefits of not repeating code.
+</p>
+</div>
+<!-- end of the second set of review feedback notes -->
+
+<div class="to-reviewer">
+<h2>1.4. STILL MORE NOTES on STUFF</h2>
+<ol>
+<li>
+Ah ha! It seems there is some (hidden) 'structure' in HTML5.
+Doing a little digging on the nature of nested lists, it turns out that in the past it was acceptable to start the nested list AFTER the close tag of the list element the new list pertained to. Now the nested list 
+must be BEFORE the close tag of the list element to which it pertains.
+[I should have had the code checked, instead of assuming I was doing more stuff I knew enough about! But it displayed in the browser as I wanted it to. Sigh.]
+<br>
+ASIDE: Is there some little icon I can attach to my web page that indicates it has had the code reviewed (like there is for the CSS stuff)?
+It would be nice to have that memory jogger on my page, so I don't skip this step again.
+</li>
+<li>
+I would love to respond to the review comment "<b>...some factual errors regarding in-line/block elements</b>" but I do not know what it refers to.
+Is it...
+<!-- start of a nested list (inside a list element) -->
+  <ul>
+  <li>...a reference to the nested list thing?
+  <br>
+  I have fixed that (and done it again here).
+  <br>
+  I would observe though, that I have no idea how this relates to the in-line/block element distinction that is being referred to.
+  </li>
+  <li>...something else?
+  <br>
+  If it refers to some text/content in my web page, I have no idea of what it might be that I wrote that was incorrect.
+  <br>
+  [An email directly to me from the reviewer would certainly help clear this up.
+  Otherwise more specifics in the review would be of help.]
+  <br>
+  Meanwhile, as I am not a mind-reader, and don't have the time to study every nuance of the HTML5 specifications to, perhaps, find what might be the aspect being referred to, I have not changed any of my previously written text.</li>
+  </ul>
+<!-- end of the nested list (inside a list element) -->
+</li>
+</ol>
+<p>
+I look forward to the next round of commentary/review. Thanks.
+</p>
+<!-- end of the third set of review feedback notes -->
+
+<br>
+<a href="#top">Return to Top</a>
+<hr>
+</div>
+<!-- end of the Stage 1 stuff -->
+
+
+<!-- Stage 2 Notes -->
+<div class="chapter" id="stage2">
+<h1>STAGE 2: Automate Your Page</h1>
+
+<h2>2.1. COURSE NOTES, Part 1</h2>
+<p>
+The only thing I've learned to date in this Stage is that there is a new (to me) programming language called PYTHON.
+This language apparently is used to generate HTML code.
+</p>
+
+<p>Other notes (that I did not take at the time) from the course material are as follows:
+</p>
+<ul>
+    <li><b>Computer</b><br>
+      An electronic device designed to be capable of performing a fixed number of basic operations upon digital data.
+      These basic operations consist of things like movement of data via  connecting mechanisms to and from locations such as registers and memory, and manipulations of the contents of registers.
+      Types of computers include things like embedded computer chips (found in automotive systems, smart TVs, DVDs, and so forth), servers, and mainframes.
+      The classification of types of computers in some sense depends on the nature of the generality/range/scale of the programs it can run, as well as the generality of the types of attached devices it can deal with.</li>
+    <li><b>Program</b><br>
+      A set of instructions that direct a computer as to what operations it is to perform.</li>
+    <li><b>Operating System</b><br>
+      The most fundamental program for a computer is what is known as the Operating System.
+      This program provides a more sophisticated set of common services for other programs, hiding the details of how it is actually accomplished.
+      In larger computers there may be a portion of the Operating System stored in non-volatile memory called a BootStrap Loader, which is responsible for getting the rest of the Operating System up and running.
+      In smaller computers the entire Operating System (OS for short) is stored in non-volatile memory.</li>
+    <li><b>Web Browser</b><br>
+      A web browser is another program.
+      It runs when requested by the user of the computer.
+      It relies on the services of the OS to access the network interface of the computer and thus reach resources on the web.
+      It also relies on the services of the OS for access to the storage attached to the computer.
+      And of course, it relies on the services of the OS for dealing with the attached devices such as the monitor, the keyboard and the mouse.
+      The logic part of the web browser is its ability to interpret languages such as HTML and turn it into operations that interact with the web and the devices attached to the computer.</li>
+    <li><b>Interpreter</b><br>
+      An Interpreter is a program that takes the programming language input it is designed to handle, and using the relevant set of grammar/syntax rules, attempts to execute the instructions being provided, in an <em>on-the-fly</em> manner.
+      Python is an example of a programming language, for which there are interpreters available.</li>
+    <li><b>Programming Language</b><br>
+      A Programming Language is an artificial language that has been created to provide an <em>unambiguous</em> means of specifying what operations a computer is to perform.
+      A programming language may be specified by means of BNF.
+      Natural languages such as English, French, Chinese, and so forth are not suitable for providing instructions to computers as they are far from unambiguous.
+      Examples of programming languages include: ASSEMBLY, FORTRAN, COBOL, APL, LISP, SNOBAL, PERL, C, C+, C++, PYTHON, and so forth.</li>
+    </ul>
+    <!-- kludge here -->
+    <!-- seems HTML5 doesn't permit things like DIV and BLOCKQUOTE inside a list, so the list needs to be terminated before the note can be added -->
+      <div class="note">
+        Note that <em>very</em> large computers, with <em>very</em> sophisticated programs, such as IBM's WATSON, provide a reasonably good interpretation of the natural English language, but even so are far from perfect.
+        In fact, to be even that successful, they rely on use of a very restricted grammatical and syntactical subset of the natural English language.
+        If you get a chance to watch a rerun/recording of the two WATSON performances on the JEOPARDY game show, you will see instances where the ambiguity of the English language was not correctly handled by WATSON.</div>
+    <!-- now restart the list (good thing this list isn't numbered!) -->
+    <!-- if it was numbered, add the START="n" attribute to the OL tag -->
+    <ul>
+     <li><b>Bachus Naur Form (BNF)</b><br>
+       BNF is a notation for describing a programming language (amongst other things).
+       It consists of a number of symbols that are equated to other things - generally referred to as an expression.
+       Some of those things may be terminals (E.G. letters, characters, symbols - things that cannot be translated into anything else) or other symbols, or some mix of terminals and symbols.</li>
+      <li><b>Program</b><br>
+        Generally the term Program refers to a set of instructions that can be loaded into the memory of the computer, where either the OS or the computer hardware can execute them.
+        Web Browsers and Interpreters are examples of programs, as are things like word processors and email packages.
+        Programs can be organized into layers like an onion, with increasing complexity/capability as you move outward from the center.
+        The center is the computer hardware and the next layer is the operating system.
+        Above that could be an Interpreter such as a Web Browser.
+        And above that could be this web page definition.
+        An outer layer makes use of the services/functions provided by the lower layers.</li>
+      <li><b>App</b><br>
+        App (short for APPlication) is another generic name for Programs.
+        In common usage it tends to refer to smaller programs that run on smaller computers such as tablets, smart phones and so forth.
+        In some instances web sites/pages are treated as Apps.
+        (In these instances the Web Browser component is hidden from the user.)
+        Examples include such things as GOOGLE MAPS and IMDB.
+        In these cases there is often a Program that is running on a server class of computer somewhere in the network.</li>
+      <li><b>Compiler</b><br>
+        A Compiler is a program that is similar to an Interpreter in that it takes input of a particular language and translates it into something the computer can execute.
+        The big difference between a Compiler and an Interpreter is that the Compiler reads the entire input and ONLY THEN turns it into something that can be saved and re-used, whereas the Interpreter saves nothing and executes whatever it generates as it encounters it.
+        To put it another way, the Compiler does not actually execute the instructions it generates, whereas an Interpreter does.
+        The saved results from a Compiler are another Program; the new Program is what has to be executed by the computer to achieve the desired results.
+        So, the result is, with a Compiler, the translation of the input language happens only once, not every time the input is used.</li>
+</ul>
+
+<h2>2.2. SPELL CHECKING</h2>
+<p>
+Earlier in this learning journey I had wondered about being able to spell-check the textual content of my web page.
+It turns out to not be as simple as one could wish...
+</p>
+<p>
+It turns out that SUBLIME TEXT 3 has a spell checker.
+Unfortunately, it merely finds the error; you have to manually make the correction.
+Further, you then have to invoke it again to get to the next one.
+Here there is good news / bad news.
+The good news is there is a function key combo that will do the 'find next' function.
+The bad news is that that combo is already in use elsewhere on my laptop, so it doesn't work - I have to go through the menus for every 'find next' operation. Tedious!
+</p>
+<p>
+A search of the web did not turn up anything particularly useful....
+</p>
+<ul>
+  <li>If you happen to have MS Visual Studio, there is an add-on.</li>
+  <li>If you run a MAC there are apparently things you can get.</li>
+  <li>If you are already a programming expert you can build your own to suit your environment from the parts/info provided.</li>
+  <li>There are things out there that come loaded with obnoxious stuff your corporate firewall et al will not allow.</li>
+</ul>
+<p>
+Then there is good old MS WORD.
+This program will gladly open up and display your web page.
+You can then spell and grammar check your textual content to your heart's content.
+<b>JUST DO NOT SAVE YOUR FILE</b> as MS will output something it likes that is aproximately 10 times the size you gave it...
+<em>which in effect makes WORD apparently useless</em>.
+</p>
+<p>The practical approach I've discovered is to use two tools.
+Take advantage of the strength of WORD in being able to identify and spell check your text. 
+Avoid the downside of WORD updates to your file by making the changes with your favorite HTML editor.
+The following steps illustrate the technique...
+</p>
+<ol>
+  <li>Start by copying your HTML file into one called something like SCRATCH.HTM.</li>
+  <li>Open the SCRATCH file with MS WORD.</li>
+  <li>Then open your original HTML file with SUBLIME (or whatever your favorite editing tool is).</li>
+  <li>Proceed to let WORD find spelling errors.</li>
+  <li>When WORD find something wrong, it nicely suggests what the fix is.</li>
+  <li>Flip over to SUBLIME and find the same error, and correct it in SUBLIME.</li>
+  <li>Flip back to WORD and do not bother to correct the error, just proceed to the next error.</li>
+  <li>Repeat steps 5, 6 and 7 as needed.</li>
+  <li>When all errors are done, exit from WORD without saving.<br>
+    (If you goof and let WORD save it, don't worry, that is why we used a scratch file!)</li>
+  <li>Save your corrected HTML file from SUBLIME.</li>
+  <li>Delete the scratch file.</li>
+</ol>
+
+<h2>2.3. COURSE NOTES, Part 2</h2>
+<p>
+There are 5 ways that programmers think...
+</p>
+  <ol>
+    <li>debug</li>
+    <li>&nbsp;</li>
+    <li>&nbsp;</li>
+    <li>&nbsp;</li>
+    <li>(to be continued)</li>
+  </ol>
+<p>
+A BUG is a coding mistake.
+Bugs are an inevitible part of programming.
+They can arise from things as mundane as typing errors, to more fundamental causes such as not understanding the way the interpreter/compiler/OS handles certain operations.
+(It is debatable whether the most fundamental problem - not understanding the requirements - is a bug or not.)
+Debugging is the process of finding and correcting a coding mistake.
+</p>
+<p>
+There are 5 techniques for debugging...
+</p>
+  <ol>
+    <li>examine error messages</li>
+    <li>borrow from examples</li>
+    <li>make sure the examples work</li>
+    <li>print intermediate values</li>
+    <li>keep and compare versions</li>
+  </ol>
+<p>Pythonista's Guide to All Problems in the Galaxy
+</p>
+  <!-- start the LIST OPS data sub-list (unnumbered) -->
+  <div class="nest">
+  <ol>
+  <li value="0">Don't panic!</li>
+  <li>What are the inputs?</li>
+  <li>What are the outputs?</li>
+  <li>Work through some examples</li>
+  <li>Simple mechanical solution; don't optimize too early</li>
+  <li>Develop incrementally and test as we go</li>
+  </ol>
+  </div>
+  <!-- end of the Pythonista sub-list, resuming paragraphs -->
+
+<h2>2.4. PYTHON NOTES</h2>
+<p>
+The following notes pertain to the programming language PYTHON...
+</p>
+<ul>
+  <li>A Python program consists of a <code>&lt;block&gt;</code>
+  </li>
+  <li>A <code>&lt;block&gt;</code> consists of one or more <code>&lt;statement&gt;</code>
+  </li>
+  <li>There are multiple types of <code>&lt;statement&gt;</code>, including the following:</li>
+</ul>
+    <!-- start of the STATEMENTS sub-list (unnumbered) -->
+  <div class="nest">
+  <ul>
+    <li>An ASSIGNMENT statement consists of:
+      <pre>
+      <code>&lt;variable&gt; = &lt;expression&gt;</code>
+      </pre>
+    </li>
+  </ul>
+    <!-- start of the ASSIGNMENT STATEMENT sub-list (unnumbered) -->
+    <div class="nest">
+    <ul>
+      <li>A <code>&lt;variable&gt;</code> is a (by convention, lowercase) text string designating a named storage location for holding a piece of data.     
+      </li>
+      <li>An <code>&lt;expression&gt;</code> consists of one of the following:
+        <pre>
+        <code>&lt;expression&gt; &lt;operator&gt; &lt;expression&gt;</code>
+        <code>(&lt;expression&gt; &lt;operator&gt; &lt;expression&gt;)</code>
+        <code>&lt;variable&gt;</code>
+        <code>&lt;value&gt;</code>
+        </pre>
+      </li>
+      <li>A <code>&lt;value&gt;</code> consists of one of the following:
+        <pre>
+        <code>&lt;number&gt;</code>
+        <code>&lt;string&gt;</code>
+        <code>&lt;boolean&gt;</code>
+        <code>&lt;procedure&gt;</code>
+        <code>&lt;function&gt;</code>
+        </pre>
+      </li>
+      <li>A <code>&lt;string&gt;</code> consists of one of the following:
+        <pre>
+        <code>'&lt;text&gt;'</code>
+        <code>"&lt;text&gt;"</code>
+        <code>'''&lt;unevaluated_text&gt;'''</code>
+        <code>&lt;substring&gt;</code>
+        </pre>
+      </li>
+      <li>A <code>&lt;substring&gt;</code> consists of one of the following:
+        <pre>
+        <code>&lt;variable&gt;[&lt;start_expression&gt;:&lt;end_expression&gt;]</code>
+        <code>&lt;variable&gt;[&lt;index&gt;]</code> (a single character)
+ 
+        Note that the square brackets are part of the syntax (and do not enclose an optional element).
+        </pre>
+      </li>
+      <li>An <code>&lt;index&gt;</code> is merely an <code>&lt;expression&gt;</code> which evaluates to an integer <code>&lt;number&gt;</code> which has certain usage characteristics: 
+      </li>
+    </ul>
+      <!-- start of the INDEX sub-list (unnumbered) -->
+      <div class="nest">
+      <ul>
+        <li>the <code>&lt;expression&gt;</code> has to evaluate to zero to reference the first/starting character of the string.
+        </li>
+        <li>A value of the <code>&lt;expression&gt;</code> of negative one refers to the last character; negative numbers count backwards from the last character.
+        </li>
+      </ul>
+      </div>
+      <!-- end of the INDEX sub-list, resuming ASSIGN sub-list (unnumbered) -->
+    <ul>
+      <li>The <code>&lt;substring&gt;</code> has some specific characteristics associated with its <code>&lt;start_expression&gt;</code> and <code>&lt;end_expression&gt;</code>, as described below:
+      </li>
+    </ul>
+      <!-- start of the SUBSTRING sub-list (unnumbered) -->
+      <div class="nest">
+      <ul>
+        <li>The <code>&lt;end_expression&gt;</code> result of N means the N-1 character of the original string is the last one going into the resulting substring
+        </li>
+        <li>The example of <em>s[2:5]</em> means the 3rd and 4th characters of the string <code>&gt;variable&lt;</code> S would be extracted.
+        </li>
+        <li>A missing <code>&lt;start_expression&gt;</code> refers to the first character of the string
+        </li>
+        <li>A missing <code>&lt;end_expression&gt;</code> refers to the last character of the string
+        </li>
+        <li>Missing both expressions refers to the entire string
+        </li>
+        <li>A <code>&lt;start_expression&gt;</code> of zero refers to the first character of the string
+        </li>
+        <li>An <code>&lt;end_expression&gt;</code> of -1 refers to the last character of the string
+        </li>
+        <li>An <code>&lt;end_expression&gt;</code> of -N refers to the last Nth last character of the string
+        </li>
+        <li>Both expressions being zero refers to the entire string
+        </li>
+        <li>It is not necessarily an error if the evaluation refers to a non-existent character in the string!
+        </li>
+     </ul>
+     </div>
+     <!-- end of the SUBSTRING sub-list; resume the ASSIGN sub-list -->
+    <ul>
+      <li><code>&lt;text&gt;</code> consists of zero or more alphanumeric, punctuation, spacing and other symbols.
+      </li>
+      <li><code>&lt;unevaluated_text&gt;</code> is merely a <code>&lt;text&gt;</code> where no evaluation has been made of the spacing characteristics.
+      </li>
+      <li>a <code>&lt;boolean&gt;</code> consists of either:
+        <pre>
+        True
+        False
+        </pre>
+      </li>
+      <li>An <code>&lt;operator&gt;</code> is one of the following symbols/tokens, arranged by type:
+        <pre>
+        arithmetic: + - * /
+        logical: or and &gt; &lt; &gt;= &lt;= == !=
+        string: + *
+        </pre>
+      </li>
+      <li>Other <code>&lt;operator&gt;</code> include:
+        <pre>
+          a) <code>&lt;variable&gt;</code>%<code>&lt;expression&gt;</code> is the REM function E.G. 100%4 yields 0, 101%4 yields 1
+          b) <code>&lt;variable&gt;</code> += <code>&lt;expression&gt;</code> is a means for adding the result of the <code>&lt;expression&gt;</code> to the value of the <code>&lt;variable&gt;</code>
+        </pre>
+      </li>
+    </ul>
+    </div>
+      <!-- end of the ASSIGNMENT STATEMENT sub-list, resuming STATEMENT sub-list (unnumbered) -->
+  <ul>
+    <li>A DEF statement is a means of definining a <code>&lt;function&gt;</code> - a reusable chunk of code that varies its output based on its input(s).
+    </li>
+  </ul>
+    <!-- start the DEF FUNCTION sub-list (unnumbered) -->
+    <div class="nest">
+    <ul>
+      <li>A <code>&lt;function&gt;</code>, when executed returns a <code>&lt;value&gt;</code>.
+      </li>
+      <li>Consequently, often a <code>&lt;function&gt;</code> is used to generate a <code>&lt;value&gt;</code> within an <code>&lt;expression&gt;</code> (see above).
+      </li>
+      <li>A <code>&lt;function&gt;</code> is a method by which a <code>&lt;block&gt;</code> of code is executed using the parameters supplied (inputs) to generate a result (output), which is returned as the value of the invocation of the <code>&lt;function&gt;</code>.
+      </li>
+      <li>A <code>&lt;function&gt;</code> is defined as follows:
+        <pre>
+          def <code>&lt;function_name&gt;</code>(<code>&lt;parameter_list&gt;</code>):
+            <code>&lt;block&gt;</code>
+        </pre>
+      </li>
+      <li>The indented <code>&lt;block&gt;</code> provides the logic (code) of the function.
+      </li>
+      <li>Somewhere in the <code>&lt;block&gt;</code> (typically as the last statement of the function definition) there will be a RETURN statement.
+      </li>
+      <li>A <code>&lt;return statement&gt;</code> is defined as...
+        <pre>
+          return <code>&lt;expression&gt;</code>
+        </pre>
+      </li>
+      <li>There may be more than one <code>&lt;return statement&gt;</code> in the <code>&lt;block&gt;</code>, depending on the structure of the code.
+      </li>
+      <li>The <code>&lt;expression&gt;</code> in the <code>&lt;return statement&gt;</code> is the result to be returned by the <code>&lt;function&gt;</code>.
+      </li>
+      <li>When the <code>&lt;return statement&gt;</code> is encountered during execution of the <code>&lt;function&gt;</code>, it causes execution to return to the location immediately after the place in the <code>&lt;expression&gt;</code> where the <code>&lt;function&gt;</code> was invoked.
+      </li>
+      <li>The parameters passed in to a <code>&lt;function&gt;</code> are local copies created at execution time (call by value mechanism); there is no way the <code>&lt;function&gt;</code> can modify them such that their modified <code>&lt;value&gt;</code> are available in the calling code.
+      </li>
+      <li>A <code>&lt;function&gt;</code> is invoked as follows:
+        <pre>
+          <code>&lt;function_name&gt;</code>(<code>&lt;parameter_list&gt;</code>)
+        </pre>
+      </li>
+      <li>Care must be taken to supply the right numbers of inputs when the <code>&lt;function&gt;</code> is invoked.
+      There must be the right number of inputs, and of the right types, such that they match the way they will be use in the <code>&lt;block&gt;</code> of the <code>&lt;function&gt;</code>.
+      </li>
+    </ul>
+    </div>
+    <!-- end of the DEF FUNCTION sub-list; resume the STATEMENT sub-list -->
+<ul>
+  <li>The IF statement syntax is:
+    <pre>
+      if <code>&lt;test_expression&gt;</code>:
+        <code>&lt;block&gt;</code>
+      [else:
+        <code>&lt;block&gt;</code>]
+    </pre>
+   </li>
+</ul>
+  <!-- start the IF STATEMENT sub-list (unnumbered) -->
+  <div class="nest">
+  <ul>
+    <li>If the <code>&lt;test_expression&gt;</code> evaluates to True, the following <code>&lt;block&gt;</code> is executed.
+    If there happens to be and ELSE clause following the <code>&lt;block&gt;</code> just executed, it is skipped.
+    </li>
+    <li>If the <code>&lt;test_expression&gt;</code> evaluates to False, the following <code>&lt;block&gt;</code> is skipped.
+    If there is an ELSE clause, it's <code>&lt;block&gt;</code> would be executed.
+    Otherwise the next <code>&lt;statement&gt;</code> would be executed.
+    </li>
+    <li>A <code>&lt;test_expression&gt;</code> consists of
+      <pre>
+        <code>&lt;expression&gt;</code> <code>&lt;comparison operator&gt;</code> <code>&lt;expression&gt;</code>
+      </pre>
+    </li>
+    <li>A <code>&lt;comparison operator&gt;</code> could be one of the following:
+      <pre>
+        == &lt; &gt; &lt;= &gt;= != or and nor
+      </pre>
+    </li>
+    <li>The result of evaluation of the <code>&lt;test_expression&gt;</code> is a <code>&lt;boolean&gt;</code> value.</li>
+    <li>Evaluation of an <code>&lt;expression&gt;</code> involving the boolean operator <em>or</em> goes left to right and stops evaluation as soon as a <em>True</em> condition is realized.
+    </li>
+  </ul>
+  </div>
+  <!-- end of the IF STATEMENT sub-list; resume the STATEMENT sub-list -->
+<ul>
+  <li>The WHILE statement syntax is:
+    <pre>
+      while <code>&lt;test_expression&gt;</code>:
+        <code>&lt;block&gt;</code>
+    </pre>
+  </li>
+</ul>
+  <!-- start the WHILE STATEMENT sub-list (unnumbered) -->
+  <div class="nest">
+  <ul>
+    <li>Execution of the <code>&lt;block&gt;</code> continues repeatedly (0 or more times) and only stops when the <code>&lt;test_expression&gt;</code> evaluates to False.
+    </li>
+    <li>A BREAK statement can be inserted into the <code>&lt;block&gt;</code> of the WHILE statement.
+    It consists merely of the lowercase word <em>break</em>.
+    </li>
+    <li>When the BREAK statement is executed it causes execution to jump to the statement after the WHILE statement (IE after the <code>&lt;block&gt;</code>).
+    This can generate easier to understand code, rather than having to put in IF statements and ASSIGNMENT statements that will cause the <code>&lt;test_expression&gt;</code> to evaluate as False.
+    </li>
+  </ul>
+  </div>
+  <!-- end of the WHILE STATEMENT sub-list; resume the previous STATEMENT sub-list -->
+<ul>
+  <li>The PRINT statement causes the <code>&lt;expression&gt;</code> to be output to the standard output device (typically the screen).
+  The syntax is:
+    <pre>
+      print <code>&lt;expression&gt;</code>
+    </pre>
+  </li>
+  <li>The FOR statement causes a loop, consecutively processing each element of a <code>&lt;list&gt;</code>.
+  <pre>
+    for <code>&lt;element_var_name&gt;</code> in <code>&lt;list&gt;</code>:
+      <code>&lt;block&gt;</code>
+  </pre>
+  The <code>&lt;block&gt;</code> gets executed once for element of the <code>&lt;list&gt;</code>, where <code>&lt;element_var_name&gt;</code> is the value of the corresponding element of the <code>&lt;list&gt;</code>.
+  That is, on the first iteration <code>&lt;element_var_name&gt;</code> points to <code>&lt;list[0]&gt;</code>; on the next iteration, it points to <code>&lt;list[1]&gt;</code>, and so forth.
+  </li>
+  <li>The ASSERTION statement syntax is as follows:
+  <pre>
+    assert <code>&lt;expression&gt;</code>
+  </pre>
+  When the <code>&lt;expression&gt;</code> evaluates to <em>False</em> execution stops, with a traceback (assertion) to where execution stopped; otherwise no action is taken.
+  </li>
+</ul>
+</div>
+  <!-- end of the STATEMENTs sub-list, resuming Python list (unnumbered) -->
+  <!-- start the miscellaneous notes on PYTHON list (unnumbered) -->
+<br>
+<ul>
+  <li>A comment is anything after a hash sign.
+  It may follow a <code>&lt;statement&gt;</code>, or it may be on a line by itself.
+  </li>
+  <li>A <em>docstring</em> is a special form of comment - it gets shown by the Python interpreter when the procedure it is in is being coded.
+  Syntactically it consists of text within triple double quotes.
+  </li>
+  <li>Invoking a built-in <code>&lt;procedure&gt;</code> is by use of one of the following syntaxes:
+    <pre>
+    <code>&lt;variable&gt;.&lt;procedure-name&gt;[(&lt;expression_list&gt;)]</code>
+    <code>&lt;procedure-name&gl;(&lt;expression_list&gt;)</code>
+    </pre>
+  </li>
+</ul>
+  <!-- start the PROCEDURE sub-list (unnumbered) -->
+<div class="nest">
+<ul>
+  <li>The <code>&lt;expression_list&gt;</code> inside the parenthesis is/are called parameters (or operands or inputs, or arguments).
+  </li>
+  <li>An <code>&lt;expression_list&gt;</code> consist of one of the following:
+    <pre>
+      <code>&lt;expression&gt;</code>
+      <code>&lt;expression&gt;</code>, <code>&lt;expression_list&gt;</code>
+    </pre>
+  </li>
+</ul>
+  <!-- end of the PROCEDURE sub-list -->
+</div>
+<ul>
+  <li><em>find</em> is an example of a method, which in this case is a <em>built-in <code>&lt;procedure&gt;</code></em>.
+  </li>
+</ul>
+  <!-- start the FIND procedure sub-list (unnumbered) -->
+  <div class="nest">
+  <ul>
+    <li>The syntax of the FIND procedure is as follows:
+      <pre>
+      <code>&lt;variable&gt;</code>.find(<code>&lt;pattern&gt;</code>[, <code>&lt;index&gt;</code>])
+      </pre>
+    </li>
+    <li>The FIND procedure will return the <code>&lt;index&gt;</code> for the position in the string <code>&lt;variable&gt;</code> where the <code>&lt;pattern&gt;</code> started, or -1 if it wasn't found.
+    </li>
+    <li>A <code>&lt;string&gt;</code> always starts with a null (empty) string, so searching for null will always succeed and return zero as its location.
+    </li>
+    <li>The <em>find</em> <code>&lt;procedure&gt;</code> has an optional second parameter, which is the <code>&lt;index&gt;</code> at which to start searching; the returned <code>&lt;value&gt;</code> is the <code>&lt;index&gt;</code> in the original <code>&lt;string&gt;</code>, not relative to the start of the search, or -1 if it wasn't found.
+    </li>
+  </ul>
+  </div>
+      <!-- end of the FIND sub-list, resuming original list (unnumbered) -->
+<ul>
+  <li><em>str</em> is an example of another built-in <code>&lt;procedure&gt;</code>.
+  This procedure takes in a <code>&lt;number&gt;</code> and returns it as a <code>&lt;string&gt;</code>, as illustrated below:
+    <pre>
+        n = 4 * 7 #number of days in 4 weeks
+        print str(n) + ' days to go'
+      yeilds:
+        28 days to go
+    </pre>
+  </li>
+  <li>A <code>&lt;list&gt;</code> is a way to organize more complex data, and is defined as:
+    <pre>
+      [<code>&lt;expression&gt;</code>[, <code>&lt;expression_list&gt;</code>]]
+    </pre>
+  </li>
+</ul>
+  <!-- start the LIST data structure sub-list (unnumbered) -->
+  <div class="nest">
+  <ul>
+    <li>Square brackets are part of the syntax, to enclose the elements of the list.
+    The inner square brackets indicate an optional part of the syntax, but are not part of the syntax.
+    </li>
+    <li>There can be zero or more <code>&lt;expression&gt;</code> in a list.
+    </li>
+    <li>The <code>&lt;expression&gt;</code> can be of any data type (integer, string, etc), including another <code>&lt;list&gt;</code>.
+    In the latter case, the inner list is called a <em>nested</em> list.
+    </li>
+    <li>A reference to an element of a list is as follows:
+      <pre>
+        <code>&lt;variable_name&gt;</code>[<code>&lt;expression&gt;</code>]
+      </pre>
+    where the <code>&lt;expression&gt;</code> evaluates to a zero-based index number.
+    </li>
+    <li>A reference to an element of a nested list is as follows:
+      <pre>
+         <code>&lt;variable_name&gt;</code>[<code>&lt;expression&gt;</code>][<code>&lt;expression&gt;</code>]
+      </pre>
+    where the first index refers to the outside list and the second index refers to the inside list.
+    </li>
+    <li>An index that refers to a non-existant list element generates a run-time error.
+    </li>
+  </ul>
+  </div>
+      <!-- end of the LIST sub-list, resuming original list (unnumbered) -->
+<ul>
+<li>An object is deemed <em>mutable</em> if the content can be changed.
+</li>
+</ul>
+  <!-- start the MUTABLE data sub-list (unnumbered) -->
+  <div class="nest">
+  <ul>
+    <li>A <code>&lt;list&gt;</code> is mutable, as elements within it can be changed.
+    </li>
+    <li>An attempt to change a value within a <code>&lt;list&gt;</code> by means of an assignment statement causes the value stored in the element to be changed.
+    </li>
+    <li>When multiple <code>&lt;variables&gt;</code> point to the same <code>&lt;list&gt;</code>, changing the content of the <code>&lt;list&gt;</code> causes <em>all</em> the variables pointing to the <code>&lt;list&gt;</code> to see the changed value, not just the variable that was involved in the assignment statement.
+    </li>
+    <li>The other variables that point to the same <code>&lt;list&gt;</code> are called <em>aliases</em>.
+    </li>
+    <li>A <code>&lt;string&gt;</code> is unmutable.
+    </li>
+    <li>An attempt to change a value assigned to a string <code>&lt;variable&gt;</code> via an assignment statement causes the <code>&lt;variable&gt;</code> to point to a new storage location where the new value (string) is stored.</li>
+    <li>When a <code>&lt;list&gt;</code> is used as a parameter in a function call, it is passed by reference (call by reference). IE. the function gets a pointer to the storage where the <code>&lt;list&gt;</code> resides (effectively an <em>alias</em>).
+    Consequently the function can directly modify the contents of the <code>&lt;list&gt;</code>.
+    Note that for immutable variables (such as numbers and strings), the call is made by passing a pointer to a copy of the actual value (call by value).
+    </li>
+  </ul>
+  </div>
+      <!-- end of the MUTABLE sub-list, resuming original list (unnumbered) -->
+<ul>
+<li>Operations on a LIST include:
+</li>
+</ul>
+  <!-- start the LIST OPS data sub-list (unnumbered) -->
+  <div class="nest">
+  <ul>
+  <li>Append (to the end of a list):
+    <pre>
+      <code>&lt;list&gt;</code>.append(<code>&lt;element&gt;</code>)
+    </pre>
+  This operation <em>mutates</em> the list; no new copy/storage is created.
+  An alias would see the change.
+  </li>
+  <li>Concatenate (two lists)
+    <pre>
+      <code>&lt;list&gt;</code> + <code>&lt;list&gt;</code>
+    </pre>
+  This operation creates a new list (storage location); any aliases pointing to the original lists remain unchanged.
+  The operation is the same as occurs with two strings.
+  </li>
+  <li>Length (of a list)
+    <pre>
+      len (<code>&lt;list&gt;</code>)
+    </pre>
+  This returns the number of elements in the outer <code>&lt;list&gt;</code>, even if some of the outer elements are also a <code>&lt;list&gt;</code>.
+  [<em>len</em> works on strings as well, returning the number of characters in the string.]
+  </li>
+  <li>Finding an element in a list is done this way:
+    <pre>
+      <code>&lt;list&gt;</code>.index(<code>&lt;expression&gt;</code>)
+    </pre>
+  The function returns the index of the element in the <code>&lt;list&gt;</code> that matches the <code>&lt;expression&gt;</code>, or generates an error.
+  </li>
+  <li>A variant on the above merely returns True or False:
+    <pre>
+      <code>&lt;expression&gt;</code> in <code>&lt;list&gt;</code>
+    </pre>
+  Thus, if <code>&lt;expression&gt;</code> is in the <code>&lt;list&gt;</code> it will return True.
+  </li>
+  <li>Yet another variant is as follows:
+    <pre>
+      <code>&lt;expression&gt;</code> not in <code>&lt;list&gt;</code>
+    </pre>
+  Thus, if <code>&lt;expression&gt;</code> is in the <code>&lt;list&gt;</code> it will return False (opposite effect of the <em>in</em> function above).
+  </li>
+  <li>You can REPLACE a character in a <code>&lt;string&gt;</code> as follows:
+  <pre>
+    <code>&lt;string&gt;</code>.replace(<code>&lt;find_expression&gt;</code>,<code>&lt;replacement_expression&gt;</code>)
+  </pre>
+  In this situation the function returns the newly created string, where the first occurance of the<code>&lt;find_expression&gt;</code> is replaced by the <code>&lt;replacement_expression&gt;</code>.
+  </li>
+  </ul>
+  </div>
+      <!-- end of the LIST OPS sub-list, resuming original list (unnumbered) -->
+  <!-- end of the notes on PYTHON list (unnumbered) -->
+
+
+
+<a href="#top">Return to Top</a>
+<hr>
+</div>
+<!-- end of the stuff pertaining to Stage 2 -->
+
+
+
+
+<!-- Footer area -->
+<div class="checks">
+<!-- image downloaded from WC3 web site -->
+<p>
+    <a href="wc3_html5.0_logo.jpg">
+        <img style="border:0;width:88px;height:31px" src="wc3_html5.0_logo.jpg" alt="Valid HTML5!">
+    </a>
+</p>
+<p>&nbsp;</p>
+<p>
+    <a href="vcss.gif">
+        <img style="border:0;width:88px;height:31px" src="vcss.gif" alt="Valid CSS!">
+    </a>
+</p>
+<!-- insert 'days between' python call here -->
+<p>
+  Days to retirement ~ 1214 days
+</p>
+</div>
+<!-- end of footer material -->
+
+</body>
+</html>

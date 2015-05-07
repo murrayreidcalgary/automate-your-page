@@ -1,0 +1,70 @@
+/* This is a CSS comment.*/
+
+
+/*
+Comments are only to help PEOPLE read a code file. The
+computer ignores them.
+*/
+
+/* only turn the following on if you want to see
+what the boxes look like..
+* {
+   outline: 1px solid red !important;
+}
+*/
+
+.centered {
+	text-align: center
+}
+
+.description {
+	color:green;
+	max-width: 705px;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+} 
+h1 {
+	color: red;
+}
+h2 {
+	color: blue;
+}
+.checks {
+    display: flex;
+}
+.html-tags {
+	background-color: black;
+	color: white;
+}
+.to-reviewer {
+	color: black;
+	font-weight: bold;
+	background-color: grey;
+}
+.chapter {
+	background-color: pink;
+}
+li {
+/* turn off this particular style, as it changes Unorder Lists into Ordered lists
+	list-style-type: upper-roman;
+*/
+	margin: 0 0 10px 0;
+}
+.note {
+	margin-left: 50px;
+	margin-right: 100px;
+}
+.nest {
+	margin-left: 50px;
+}
+
+/*
+I tried to use the counter-increment and counter-reset attributes with the H1-H6 tags to be able to number the sections.
+Also used the psuedo-tag BEFORE to allow the counter to be displayed before the Heading text.
+Unfortunately, the counters turn into new instances in each DIV. 
+Thus continuity cannot be automated.
+*/
